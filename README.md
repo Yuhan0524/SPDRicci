@@ -4,17 +4,30 @@ This repository contains the SPD Ricci Flow implementation used for the
 Wisconsin node-classification experiment.
 
 The experiment uses the original graph and node features, without graph
-rewiring, feature propagation, edge weights, training-time augmentation,
-restart averaging, or an ensemble.
+rewiring, feature propagation, externally supplied edge attributes,
+training-time augmentation, restart averaging, or an ensemble. The base graph
+weights are uniform, `w_ij = 1`; the SPD Ricci layer still computes the
+metric-dependent adaptive factor `exp(-beta * r_ij)` defined by the method.
 
-## Result
+## Reported Result
 
 | Model | Accuracy (%) |
 |---|---:|
 | SPD Ricci Flow | **89.80 +/- 3.52** |
 
 The table reports the mean and population standard deviation over split and
-training seeds `0,...,9`.
+training seeds `0,...,9`. The corresponding per-seed outputs are stored in
+`results/wisconsin.json`.
+
+## Data Protocol
+
+The graph is converted to an undirected graph after self-loops are removed,
+and the supplied node features are row-normalized. The random split follows
+the released GNRF `random_split` implementation exactly. For Wisconsin's 251
+nodes, each seed assigns 150 nodes to training, 49 to validation, and 50 to
+testing. As in the released implementation, the two boundary indices between
+these slices are not assigned to a split. This behavior is retained for direct
+comparison with the reported GNRF protocol.
 
 ## Setup
 
