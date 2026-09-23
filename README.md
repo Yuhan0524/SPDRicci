@@ -3,7 +3,7 @@
 This repository contains the SPD Ricci Flow implementation used for the
 Wisconsin node-classification experiment.
 
-## Reported Result
+<!--## Reported Result
 
 | Model | Accuracy (%) |
 |---|---:|
@@ -11,7 +11,7 @@ Wisconsin node-classification experiment.
 
 The table reports the mean and population standard deviation over split and
 training seeds `0,...,9`. The corresponding per-seed outputs are stored in
-`results/wisconsin.json`.
+`results/wisconsin.json`.-->
 
 ## Setup
 
