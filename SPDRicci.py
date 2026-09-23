@@ -50,10 +50,6 @@ def main() -> None:
             seeds=args.seeds,
             device=args.device,
             data_root=str(args.data_root.resolve()),
-            allow_deeper=True,
-            feature_mapper_override=None,
-            precision_override=None,
-            operator_override=None,
         )
     )
 

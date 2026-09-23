@@ -1,36 +1,24 @@
 {
   "dataset": "wisconsin",
-  "margin": 1.7999978065490723,
   "model": {
     "activation": "tgrelu",
-    "activation_beta": 20.0,
-    "activation_floor": null,
-    "activation_jitter": 0.0,
-    "beta": 300.0,
-    "bimap_decoder": "tied_inverse",
+    "beta": 300,
     "bimap_max_delta": 0.08,
-    "classifier": "linear",
+    "bimap_min_singular_value": 0.1,
     "classifier_dropout": 0.5,
     "epsilon": 0.1,
-    "feature_dropout": 0.0,
-    "feature_init": "random",
-    "feature_mapper": "squared",
-    "feature_spd_epsilon": 0.0001,
-    "freeze_feature_mapper": false,
+    "feature_dropout": 0,
     "layers": 2,
-    "spd4gnn_jitter": 0.0,
     "spd_dim": 16,
     "spd_floor": 0.0001,
     "tgrelu_delta": 0.2
   },
-  "paper_target": 88.0,
   "parameter_count": 437421,
   "phase": "final",
-  "protocol": "GNRF_new exact released 60/20/20 split implementation",
+  "protocol": "random 60/20/20 node splits",
   "runs": [
     {
       "best_epoch": 149,
-      "initialization_seed": null,
       "seconds": 8.769153232686222,
       "seed": 0,
       "stopped_nonfinite": false,
@@ -40,7 +28,6 @@
     },
     {
       "best_epoch": 247,
-      "initialization_seed": null,
       "seconds": 7.744795951060951,
       "seed": 1,
       "stopped_nonfinite": false,
@@ -50,7 +37,6 @@
     },
     {
       "best_epoch": 234,
-      "initialization_seed": null,
       "seconds": 7.585472648963332,
       "seed": 2,
       "stopped_nonfinite": false,
@@ -60,7 +46,6 @@
     },
     {
       "best_epoch": 204,
-      "initialization_seed": null,
       "seconds": 8.460832444019616,
       "seed": 3,
       "stopped_nonfinite": false,
@@ -70,7 +55,6 @@
     },
     {
       "best_epoch": 213,
-      "initialization_seed": null,
       "seconds": 7.669937215745449,
       "seed": 4,
       "stopped_nonfinite": false,
@@ -80,7 +64,6 @@
     },
     {
       "best_epoch": 90,
-      "initialization_seed": null,
       "seconds": 8.01574125699699,
       "seed": 5,
       "stopped_nonfinite": false,
@@ -90,7 +73,6 @@
     },
     {
       "best_epoch": 286,
-      "initialization_seed": null,
       "seconds": 7.679565608501434,
       "seed": 6,
       "stopped_nonfinite": false,
@@ -100,7 +82,6 @@
     },
     {
       "best_epoch": 164,
-      "initialization_seed": null,
       "seconds": 8.039552918635309,
       "seed": 7,
       "stopped_nonfinite": false,
@@ -110,7 +91,6 @@
     },
     {
       "best_epoch": 109,
-      "initialization_seed": null,
       "seconds": 7.6702312007546425,
       "seed": 8,
       "stopped_nonfinite": false,
@@ -120,7 +100,6 @@
     },
     {
       "best_epoch": 67,
-      "initialization_seed": null,
       "seconds": 7.714610790833831,
       "seed": 9,
       "stopped_nonfinite": false,
@@ -144,33 +123,14 @@
   "test_mean": 89.79999780654907,
   "test_std": 3.5156792042266205,
   "training": {
-    "bimap_lr_ratio": 1.0,
-    "class_weight_power": 0.0,
     "epochs": 300,
-    "eval_aggregation": "logits",
-    "eval_samples": 1,
-    "feature_bias_init_scale": 1.0,
-    "feature_lr_ratio": 1.0,
-    "feature_weight_init_scale": 1.0,
-    "gradient_clip": 5.0,
-    "graph_mode": "original",
-    "graph_topk": 0,
-    "graph_weight_mode": "none",
-    "graph_weight_temperature": 1.0,
-    "head_finetune_epochs": 0,
-    "head_finetune_lr": 0.001,
-    "head_finetune_weight_decay": 0.0,
-    "label_smoothing": 0.0,
+    "gradient_clip": 5,
     "learning_rate": 0.03,
-    "minimum_lr_ratio": 0.01,
-    "momentum": 0.9,
     "optimizer": "adam",
     "precision": "float32",
-    "scheduler": "none",
-    "scheduler_gamma": 0.5,
-    "step_size": 100,
     "weight_decay": 0.0005
   },
   "validation_mean": 90.20407974720001,
-  "validation_std": 5.970912431225147
+  "validation_std": 5.970912431225147,
+  "metric": "accuracy"
 }
