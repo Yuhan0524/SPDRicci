@@ -3,4 +3,5 @@ data/
 __pycache__/
 .pytest_cache/
 *.py[cod]
-results/*_reproduce.json
+results/*_run.json
+results/*.tmp

@@ -109,7 +109,7 @@ def model_input_features(
 ) -> torch.Tensor:
     """Return fixed, label-free graph features for the unchanged SPD model.
 
-    ``original`` is the canonical reproduction path. The concatenation modes
+    ``original`` is the default training path. The concatenation modes
     are an explicitly separate preprocessing branch inspired by SIGN/FSGNN:
     they concatenate X with normalized-adjacency propagations and never inspect
     labels or any train/validation/test mask.

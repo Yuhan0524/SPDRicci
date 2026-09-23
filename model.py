@@ -515,7 +515,7 @@ class Simple1DiffusionLayer(nn.Module):
             else:
                 # This is algebraically identical to index_add, but avoids CUDA
                 # atomic summation.  WebKB is small enough that its dense incidence
-                # matrix is inexpensive and substantially more reproducible.
+                # matrix is inexpensive and gives a deterministic reduction.
                 incidence = torch.nn.functional.one_hot(
                     source, num_classes=matrices.shape[0]
                 ).transpose(0, 1).to(dtype=matrices.dtype)
